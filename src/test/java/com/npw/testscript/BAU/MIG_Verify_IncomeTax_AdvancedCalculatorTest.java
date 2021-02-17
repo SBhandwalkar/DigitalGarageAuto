@@ -1,4 +1,4 @@
-package com.npw.testscripts.ra;
+package com.npw.testscript.BAU;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
@@ -9,9 +9,9 @@ import com.om.framework.basetest.BaseTest;
 import com.om.framework.lib.Elements;
 import com.om.framework.lib.Utilities;
 
-public class Verify_IncomeTax_AdvancedCalculator extends BaseTest {
+public class MIG_Verify_IncomeTax_AdvancedCalculatorTest extends BaseTest {
 	
-	private static String sUrl = "https://new-public-web-mig1-qa.nonprod.digitalplatform.oldmutual.co.za/migration-income-tax-calculator";
+	private static String sUrl = "https://www.oldmutual.co.za/personal/tools-and-calculators/income-tax-calculator";
 	private static boolean bStatus;
 	private static String TestData_path= "TestData\\ITCalculator_TestData.xlsx";
 	private static String sheetName="Basic";
@@ -59,8 +59,8 @@ public class Verify_IncomeTax_AdvancedCalculator extends BaseTest {
 			
 			
 			
-			String sNetSal=Elements.getText(By.xpath(BAULocators.IncomeTax.netsalary()));
-			String sIT=Elements.getText(By.xpath(BAULocators.IncomeTax.incometax()));
+			String sNetSal=Elements.getElementAttribute(By.xpath(BAULocators.IncomeTax.netsalary()), "secondary-payment-value");
+			String sIT=Elements.getElementAttribute(By.xpath(BAULocators.IncomeTax.incometax()), "main-payment-value");
 			
 			sNetSal=sNetSal.replace("R", "");
 			sNetSal=sNetSal.replace(" ", "");

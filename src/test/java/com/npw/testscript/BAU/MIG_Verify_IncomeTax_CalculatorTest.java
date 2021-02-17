@@ -1,4 +1,4 @@
-package com.npw.testscripts.ra;
+package com.npw.testscript.BAU;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -12,7 +12,7 @@ import com.om.framework.lib.Browser;
 import com.om.framework.lib.Elements;
 import com.om.framework.lib.Utilities;
 
-public class Verify_IncomeTax_Calculator extends BaseTest {
+public class MIG_Verify_IncomeTax_CalculatorTest extends BaseTest {
 
 	private static String sUrl = "https://new-public-web-mig1-qa.nonprod.digitalplatform.oldmutual.co.za/personal/solutions/income-tax-test";
 	private static boolean bStatus;

@@ -67,7 +67,7 @@ public class BAULocators {
 		public static String dropDownPaidFreq () 
 		{
 
-			sXpath="//div[@class='om-dropdown-field']";
+			sXpath="//om-form-dropdown-field-wrapper[@name='incomeFrequencyValue']//om-icon[@icon-name='chevron_down']";
 			return sXpath;
 		}
 
@@ -94,13 +94,13 @@ public class BAULocators {
 
 		public static String netsalary()
 		{
-			sXpath="/html/body/om-wc-config/om-product-detail-page/om-page/div/div/div/div/main/div/section[3]/om-application-container/div/om-1-col-layout/div/om-section/div/div/div[2]/div/om-itc-container/div/div/div[2]/div/div/div[1]/section[3]/table/tr/td[2]/div/div/om-calculator-result-card[1]/div/div/div[1]/div[3]/table/tr/td[2]/table/tr[2]/td/span[1]";
+			sXpath="//div[@class='basic-result-card-desktop']//om-calculator-result-card[1]";
 			return sXpath;
 		}
 
 		public static String incometax()
 		{
-			sXpath="/html/body/om-wc-config/om-product-detail-page/om-page/div/div/div/div/main/div/section[3]/om-application-container/div/om-1-col-layout/div/om-section/div/div/div[2]/div/om-itc-container/div/div/div[2]/div/div/div[1]/section[3]/table/tr/td[2]/div/div/om-calculator-result-card[1]/div/div/div[1]/div[2]/table/tr/td[2]";
+			sXpath="//div[@class='basic-result-card-desktop']//om-calculator-result-card[1]";
 			return sXpath;
 		}
 

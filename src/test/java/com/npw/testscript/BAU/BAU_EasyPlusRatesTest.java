@@ -1,4 +1,4 @@
-package com.npw.testscripts.ra;
+package com.npw.testscript.BAU;
 
 
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ import com.om.framework.lib.Elements;
 import com.om.framework.lib.Messages;
 import com.om.framework.lib.Utilities;
 
-public class EasyPlusRates extends BaseTest {
+public class BAU_EasyPlusRatesTest extends BaseTest {
 	private static String TestData_path= "TestData\\NPW_EasyPlusTest.xlsx";
 	private static String sheetName="Covers";
 	private static String RatesheetName="";

@@ -9,7 +9,7 @@ import com.om.framework.basetest.BaseTest;
 import com.om.framework.lib.Elements;
 import com.om.framework.lib.Utilities;
 
-public class TC01_Personal_Loan_Calcutalor extends BaseTest {
+public class MIG_Personal_Loan_CalcutalorTest extends BaseTest {
 	private static boolean bStatus;
 	private static String sTotalLoanPayment,sMonthlyRepayment,sMonthlyRepaymentMin,sMonthlyRepaymentMax,sTerm,sCapital,sInitiationFee,sServiceFee,sInstallments,sInterstRates,sCreditLifeInsurance;
 	private static String TestData_path= "TestData\\PersonalLoan_TestData.xlsx";
