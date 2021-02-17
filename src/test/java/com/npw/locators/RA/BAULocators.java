@@ -158,7 +158,7 @@ public class BAULocators {
 		public static String dropDownGeneric() 
 		{
 
-			sXpath="//div[@class='om-dropdown-field']";
+			sXpath="//*[@id='loanAmount']//span[@class='selected-value-container']";
 			return sXpath;
 		}
 
@@ -171,7 +171,7 @@ public class BAULocators {
 		
 		public static String selectdropDownMonts()
 		{
-			sXpath="//*[@id='repaymentDuration']//div[@class='om-dropdown-field']";
+			sXpath="//*[@id='repaymentDuration']//span[@class='selected-value-container']";
 			return sXpath;
 
 		}
@@ -182,6 +182,45 @@ public class BAULocators {
 			return sXpath;
 
 		}
+		
+		public static String ResultCard()
+		{
+			sXpath="//div[@class='content-right']//om-calculator-result-card";
+			return sXpath;
+
+		}
+		
+		
+		public static String MonthlyRepayment(String sLabel)
+		{
+			sXpath="//om-labeled-value[@label='"+sLabel+"']//h4";
+			return sXpath;
+
+		}
+		
+		public static String CloseIcon()
+		{
+			sXpath="//div[@class='om-modal-wrapper large']//om-icon[@icon-name='close']";
+			return sXpath;
+
+		}
+		
+		public static String inputTextRepay()
+		{
+
+			sXpath= "//input[@placeholder ='Repayment term']";
+			return sXpath;
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		

@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-09-10T08:36:37 SAST" name="Default suite" finished-at="2020-09-10T08:36:49 SAST" duration-ms="11214">
+  <suite started-at="2020-09-30T10:56:30 SAST" name="Default suite" finished-at="2020-09-30T10:56:40 SAST" duration-ms="10033">
     <groups>
     </groups>
-    <test started-at="2020-09-10T08:36:37 SAST" name="Default test" finished-at="2020-09-10T08:36:49 SAST" duration-ms="11214">
+    <test started-at="2020-09-30T10:56:30 SAST" name="Default test" finished-at="2020-09-30T10:56:40 SAST" duration-ms="10033">
       <class name="com.npw.testscripts.Generic.TC01_TestAPI">
-        <test-method signature="API()[pri:0, instance:com.npw.testscripts.Generic.TC01_TestAPI@65fb9ffc]" started-at="2020-09-10T08:36:37 SAST" name="API" finished-at="2020-09-10T08:36:48 SAST" duration-ms="11082" status="PASS">
+        <test-method signature="API()[pri:0, instance:com.npw.testscripts.Generic.TC01_TestAPI@65fb9ffc]" started-at="2020-09-30T10:56:30 SAST" name="API" finished-at="2020-09-30T10:56:40 SAST" duration-ms="9899" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- API -->
