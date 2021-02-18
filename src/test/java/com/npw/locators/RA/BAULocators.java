@@ -117,17 +117,7 @@ public class BAULocators {
 			return sXpath;
 		}
 
-		public static String btnCalculate()
-		{
-			sXpath="/html/body/om-wc-config/om-product-detail-page/om-page/div/div/div/div/main/div/section[3]/om-application-container/div/om-1-col-layout/div/om-section/div/div/div[2]/div/om-itc-container/div/div/div[2]/div/div/div[1]/section[3]/table/tr/td[1]/div[1]/om-button/button/span[1]";
-			return sXpath;
-		}
-
-		public static String btnReCalculate()
-		{
-			sXpath="/html/body/om-wc-config/om-product-detail-page/om-page/div/div/div/div/main/div/section[3]/om-application-container/div/om-1-col-layout/div/om-section/div/div/div[2]/div/om-itc-container/div/div/div[2]/div/div/div[1]/section[3]/table/tr/td[2]/div/div/om-calculator-result-card[1]/div/div/div[1]/div[3]/table/tr/td[2]/table/tr[2]/td/span[2]/om-button/button/span";
-			return sXpath;
-		}
+		
 
 
 

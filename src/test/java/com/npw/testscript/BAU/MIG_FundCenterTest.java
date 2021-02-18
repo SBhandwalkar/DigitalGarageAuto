@@ -37,7 +37,10 @@ public class MIG_FundCenterTest extends BaseTest  {
 		
 		Browser.navigateTo(driver,sUrl);
 		FundsLinks=Elements.getWebElements(By.xpath("//span[@class='fund-title']//a"));
-		FundsLinks= Elements.getWebElements(By.xpath("//tr[@class='gridRow']/td/a"));
+		Elements.clickElement(By.xpath("//div[@class='desktop-pagination-block']//input[@placeholder='Please select...']"));
+		Elements.clickElement(By.xpath("//div[@class='desktop-pagination-block']//li[text()='All']"));
+		
+		
 		for(WebElement link:FundsLinks)
 		{
 			

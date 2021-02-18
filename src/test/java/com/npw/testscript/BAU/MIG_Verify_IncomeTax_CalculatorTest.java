@@ -150,20 +150,19 @@ public class MIG_Verify_IncomeTax_CalculatorTest extends BaseTest {
 
 
 			Thread.sleep(2000);
-			bStatus=Elements.movetoclickElement(By.xpath(BAULocators.IncomeTax.btnCalculate()));
-
-			Thread.sleep(1000);
+			bStatus=Elements.clickElement(By.xpath(BAULocators.IncomeTax.btnGeneric("CALCULATE")));
+			
+			Thread.sleep(2000);
+			
 
 			
 			//bStatus=Elements.movetoclickElement(By.xpath(BAULocators.IncomeTax.netsalary()));
-			String sNetSal=Elements.getText(By.xpath(BAULocators.IncomeTax.netsalary()));
-			//bStatus=Elements.movetoclickElement(By.xpath(BAULocators.IncomeTax.incometax()));
-			
-			String sIT=Elements.getText(By.xpath(BAULocators.IncomeTax.incometax()));
+			String sNetSal=Elements.getElementAttribute(By.xpath(BAULocators.IncomeTax.netsalary()), "secondary-payment-value");
+			String sIT=Elements.getElementAttribute(By.xpath(BAULocators.IncomeTax.incometax()), "main-payment-value");
 
-			sNetSal=sNetSal.replace("R", "");
+			//sNetSal=sNetSal.replace("R", "");
 			sNetSal=sNetSal.replace(" ", "");
-			sIT=sIT.replace("R", "");
+			//sIT=sIT.replace("R", "");
 			sIT=sIT.replace(" ", "");
 
 			if(sNetSal.contains(sNetIncome) && sIT.contains(sMonthlyITax)) 
@@ -186,7 +185,7 @@ public class MIG_Verify_IncomeTax_CalculatorTest extends BaseTest {
 
 
 
-			bStatus=Elements.movetoclickElement(By.xpath(BAULocators.IncomeTax.btnReCalculate()));
+			bStatus=Elements.clickElement(By.xpath(BAULocators.IncomeTax.btnGeneric("RECALCULATE")));
 			
 			Thread.sleep(2000);
 

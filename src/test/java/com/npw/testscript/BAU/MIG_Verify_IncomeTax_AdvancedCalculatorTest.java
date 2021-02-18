@@ -69,24 +69,24 @@ public class MIG_Verify_IncomeTax_AdvancedCalculatorTest extends BaseTest {
 			String sNetSal=Elements.getElementAttribute(By.xpath(BAULocators.IncomeTax.netsalary()), "secondary-payment-value");
 			String sIT=Elements.getElementAttribute(By.xpath(BAULocators.IncomeTax.incometax()), "main-payment-value");
 			
-			sNetSal=sNetSal.replace("R", "");
+			//sNetSal=sNetSal.replace("R", "");
 			sNetSal=sNetSal.replace(" ", "");
-			sIT=sIT.replace("R", "");
+			//sIT=sIT.replace("R", "");
 			sIT=sIT.replace(" ", "");
 			
 			if(sNetSal.contains(sMonthlyITax)&&sIT.contains(sNetIncome)) 
 			{
 				System.out.println("Pass:   "+sNetSal);
-				Utilities.setCellData("Pass",iRowCounter,18);
-				Utilities.setCellData(sNetSal,iRowCounter,16);
-				Utilities.setCellData(sIT,iRowCounter,17);
+				Utilities.setCellData("Pass",iRowCounter,5);
+				Utilities.setCellData(sNetSal,iRowCounter,6);
+				Utilities.setCellData(sIT,iRowCounter,7);
 			}
 			else
 			{
 				System.out.println("Fail:   "+sNetSal);
-				Utilities.setCellData("Pass",iRowCounter,18);
-				Utilities.setCellData(sNetSal,iRowCounter,16);
-				Utilities.setCellData(sIT,iRowCounter,17);
+				Utilities.setCellData("Pass",iRowCounter,5);
+				Utilities.setCellData(sNetSal,iRowCounter,6);
+				Utilities.setCellData(sIT,iRowCounter,7);
 			}
 			
 			
