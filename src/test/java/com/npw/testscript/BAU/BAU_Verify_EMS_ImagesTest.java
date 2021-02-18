@@ -1,4 +1,4 @@
-package com.npw.testscripts.ra;
+package com.npw.testscript.BAU;
 
 import org.testng.annotations.Test;
 
@@ -6,7 +6,7 @@ import com.om.framework.basetest.BaseTest;
 import com.om.framework.lib.Browser;
 import com.om.framework.lib.Utilities;
 
-public class Verify_EMS_Images extends BaseTest {
+public class BAU_Verify_EMS_ImagesTest extends BaseTest {
 	
 	private static String sUrl;
 	

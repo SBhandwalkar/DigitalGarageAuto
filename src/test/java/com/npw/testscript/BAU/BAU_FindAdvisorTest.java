@@ -1,4 +1,4 @@
-package com.npw.testscripts.ra;
+package com.npw.testscript.BAU;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,7 +16,7 @@ import com.om.framework.lib.Browser;
 import com.om.framework.lib.Elements;
 import com.om.framework.lib.Utilities;
 
-public class T02_FindAdvisor extends BaseTest {
+public class BAU_FindAdvisorTest extends BaseTest {
 	
 	
 	
