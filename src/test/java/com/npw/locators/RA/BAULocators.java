@@ -45,8 +45,8 @@ public class BAULocators {
 
 	}//End Fund Centre Locators
 
-	
-//IncomeTax Locators	
+
+	//IncomeTax Locators	
 	public static class IncomeTax
 	{
 
@@ -117,7 +117,7 @@ public class BAULocators {
 			return sXpath;
 		}
 
-		
+
 
 
 
@@ -125,10 +125,10 @@ public class BAULocators {
 	}
 
 	//IncomeTax Locators	
-	
+
 	public static class PersonalLoan
 	{
-		
+
 		public static String inputText(String Stext)
 		{
 
@@ -137,14 +137,14 @@ public class BAULocators {
 
 			return sXpath;
 		}
-		
+
 		public static String btnPLCGeneric(String btnContinue)
 		{
 			sXpath="//div[@id='web-container']//*[text()='"+btnContinue+"']";
 			return sXpath;
 		}
-		
-		
+
+
 		public static String dropDownGeneric() 
 		{
 
@@ -158,65 +158,78 @@ public class BAULocators {
 			return sXpath;
 
 		}
-		
+
 		public static String selectdropDownMonts()
 		{
 			sXpath="//*[@id='repaymentDuration']//span[@class='selected-value-container']";
 			return sXpath;
 
 		}
-		
+
 		public static String SelectSummary()
 		{
 			sXpath="//div[@id='web-container']//om-icon[@icon-name='help_outline']";
 			return sXpath;
 
 		}
-		
+
 		public static String ResultCard()
 		{
 			sXpath="//div[@class='content-right']//om-calculator-result-card";
 			return sXpath;
 
 		}
-		
-		
+
+
 		public static String MonthlyRepayment(String sLabel)
 		{
 			sXpath="//om-labeled-value[@label='"+sLabel+"']//h4";
 			return sXpath;
 
 		}
-		
+
 		public static String CloseIcon()
 		{
 			sXpath="//div[@class='om-modal-wrapper large']//om-icon[@icon-name='close']";
 			return sXpath;
 
 		}
-		
+
 		public static String inputTextRepay()
 		{
 
 			sXpath= "//input[@placeholder ='Repayment term']";
 			return sXpath;
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+	}
+
+	//IncomeTax Locators	
+
+	public static class LandingPage
+	{
+
+		public static String HeaderMenu()
+		{
+			sXpath="//om-main-navigation-menu[@slot='main-navigation-items-desktop']//ul[@slot='navigation-menu']//li//a";
+			return sXpath;
+
+		}
+
+		public static String FooterMenu()
+		{
+			sXpath="//*[@class='theme-default om-footer-container']//a";
+			return sXpath;
+
+		}
+
+
+
+
 	}
 
 
