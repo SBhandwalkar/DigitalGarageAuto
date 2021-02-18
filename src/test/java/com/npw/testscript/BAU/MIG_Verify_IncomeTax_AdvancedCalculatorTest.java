@@ -1,11 +1,13 @@
 package com.npw.testscript.BAU;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 
 import com.npw.locators.RA.BAULocators;
 
 import com.om.framework.basetest.BaseTest;
+import com.om.framework.lib.Browser;
 import com.om.framework.lib.Elements;
 import com.om.framework.lib.Utilities;
 
@@ -28,6 +30,7 @@ public class MIG_Verify_IncomeTax_AdvancedCalculatorTest extends BaseTest {
 		Utilities.setExcelFile(TestData_path,sheetName);		
 
 		int iRowCount = Utilities.getRowNum();
+		Browser.navigateTo(driver,sUrl);
 		for(int iRowCounter=1;iRowCounter<=iRowCount;iRowCounter++)
 		{
 			
@@ -39,6 +42,10 @@ public class MIG_Verify_IncomeTax_AdvancedCalculatorTest extends BaseTest {
 			sMonthlyITax=sMonthlyITax.replace(",", ".");
 			sNetIncome=sNetIncome.replace(",", ".");
 			
+			
+			JavascriptExecutor js = (JavascriptExecutor)driver;
+			js.executeScript("window.scrollTo(0, -document.body.scrollHeight)");
+		    
 			
 			
 			bStatus=Elements.clickElement(By.xpath(BAULocators.IncomeTax.radioBtnAges(sAge)));
@@ -67,24 +74,22 @@ public class MIG_Verify_IncomeTax_AdvancedCalculatorTest extends BaseTest {
 			sIT=sIT.replace("R", "");
 			sIT=sIT.replace(" ", "");
 			
-			if(sNetSal.contains(sMonthlyITax)) 
+			if(sNetSal.contains(sMonthlyITax)&&sIT.contains(sNetIncome)) 
 			{
 				System.out.println("Pass:   "+sNetSal);
+				Utilities.setCellData("Pass",iRowCounter,18);
+				Utilities.setCellData(sNetSal,iRowCounter,16);
+				Utilities.setCellData(sIT,iRowCounter,17);
 			}
 			else
 			{
 				System.out.println("Fail:   "+sNetSal);
+				Utilities.setCellData("Pass",iRowCounter,18);
+				Utilities.setCellData(sNetSal,iRowCounter,16);
+				Utilities.setCellData(sIT,iRowCounter,17);
 			}
 			
 			
-			if(sIT.contains(sNetIncome)) 
-			{
-				System.out.println("Pass:   "+sIT);
-			}
-			else
-			{
-				System.out.println("Fail:   "+sIT);
-			}
 			
 			
 			
@@ -95,6 +100,8 @@ public class MIG_Verify_IncomeTax_AdvancedCalculatorTest extends BaseTest {
 			
 			
 		}
+		
+		Utilities.closeexcel(TestData_path);
 		
 		
 		

@@ -30,6 +30,7 @@ public class MIG_Verify_IncomeTax_CalculatorTest extends BaseTest {
 	public static void IncomeTaxCalculator() throws Exception {
 
 		Utilities.setExcelFile(TestData_path,sheetName);
+		Browser.navigateTo(driver,sUrl);
 		bStatus=Elements.clickElement(By.xpath(BAULocators.IncomeTax.btnGeneric("Advanced")));
 
 
