@@ -2,6 +2,7 @@ package com.npw.testscript.BAU;
 
 import static io.restassured.RestAssured.when;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -24,7 +25,9 @@ public class NPW_CheckHeaderFooterLinksTest extends BaseTest {
 	private static String sUrl;
 	private static List<WebElement> headerLinks;
 	private static List<WebElement> footerLinks;
-	private static String sHeaderUrl;
+	private static String sHeaderUrl,sFooterUrl;
+	private static ArrayList<String> brokenlinks;
+	
 
 	@Test
 	public static void CheckHerderFooter() throws Exception
@@ -50,24 +53,45 @@ public class NPW_CheckHeaderFooterLinksTest extends BaseTest {
 					Response res= when().get(sHeaderUrl);
 					System.out.println(sHeaderUrl);
 					System.out.println(res.getStatusCode());
+					if(res.getStatusCode()!=200)
+					{
+						brokenlinks.add(sHeaderUrl);
+					}
 
 				}
 				
-				for(int j=0;j<headerLinks.size()-1;j++) 
+				for(int j=0;j<footerLinks.size()-1;j++) 
 				{
-					sHeaderUrl=headerLinks.get(j).getAttribute("href");
-					Response res= when().get(sHeaderUrl);
-					System.out.println(sHeaderUrl);
+					sFooterUrl=footerLinks.get(j).getAttribute("href");
+					Response res= when().get(sFooterUrl);
+					System.out.println(sFooterUrl);
 					System.out.println(res.getStatusCode());
-
+					if(res.getStatusCode()!=200)
+					{
+						brokenlinks.add(sFooterUrl);
+					}
 				}
 			}
 			
+			
+			for(int f=0;f<brokenlinks.size()-1;f++) {
+				
+				Utilities.setCellData(brokenlinks.get(f),f,1);
+				
+			}
 			Utilities.closeexcel(TestData_path);
+			
 		}
 
 		catch(Exception e) 
 		{
+			System.out.println(e);
+			for(int f=0;f<brokenlinks.size()-1;f++) 
+			{
+				
+				Utilities.setCellData(brokenlinks.get(f),f,1);
+				
+			}
 			Utilities.closeexcel(TestData_path);
 		}
 
