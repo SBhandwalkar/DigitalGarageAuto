@@ -4,6 +4,8 @@ import static io.restassured.RestAssured.when;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -25,7 +27,8 @@ public class NPW_CheckHeaderFooterLinksTest extends BaseTest {
 	private static String sUrl;
 	private static List<WebElement> headerLinks;
 	private static List<WebElement> footerLinks;
-	private static String sHeaderUrl,sFooterUrl;
+	private static List<WebElement> totalLinks;
+	private static String sFooteHeaderUrl;
 	private static ArrayList<String> brokenlinks;
 	
 
@@ -45,32 +48,24 @@ public class NPW_CheckHeaderFooterLinksTest extends BaseTest {
 
 				headerLinks=Elements.getWebElements(By.xpath(BAULocators.LandingPage.HeaderMenu()));
 				footerLinks=Elements.getWebElements(By.xpath(BAULocators.LandingPage.FooterMenu()));
+				totalLinks=Stream.concat(headerLinks.stream(), footerLinks.stream()).collect(Collectors.toList());
+				
+				
 
 
-				for(int i=0;i<headerLinks.size()-1;i++) 
+				for(int i=0;i<totalLinks.size()-1;i++) 
 				{
-					sHeaderUrl=headerLinks.get(i).getAttribute("href");
-					Response res= when().get(sHeaderUrl);
-					System.out.println(sHeaderUrl);
+					sFooteHeaderUrl=totalLinks.get(i).getAttribute("href");
+					Response res= when().get(sFooteHeaderUrl);
+					System.out.println(sFooteHeaderUrl);
 					System.out.println(res.getStatusCode());
 					if(res.getStatusCode()!=200)
 					{
-						brokenlinks.add(sHeaderUrl);
+						brokenlinks.add(sFooteHeaderUrl);
 					}
 
 				}
 				
-				for(int j=0;j<footerLinks.size()-1;j++) 
-				{
-					sFooterUrl=footerLinks.get(j).getAttribute("href");
-					Response res= when().get(sFooterUrl);
-					System.out.println(sFooterUrl);
-					System.out.println(res.getStatusCode());
-					if(res.getStatusCode()!=200)
-					{
-						brokenlinks.add(sFooterUrl);
-					}
-				}
 			}
 			
 			
